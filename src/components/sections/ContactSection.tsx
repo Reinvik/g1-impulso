@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import confetti from 'canvas-confetti';
 
 interface ContactSectionProps {
@@ -40,7 +41,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialInterest 
     const text = encodeURIComponent(
       `Hola G1 IMPULSO, me gustaría solicitar información y agendar un diagnóstico operativo inicial para mi empresa ${formData.company || ''}.`
     );
-    window.open(`https://wa.me/56962262290?text=${text}`, '_blank');
+    window.open(`https://wa.me/56977082067?text=${text}`, '_blank');
   };
 
   return (
@@ -82,13 +83,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialInterest 
               {/* Direct channels */}
               <div className="space-y-4 text-xs sm:text-sm text-slate-300">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-white/10 text-white">
-                    <Phone className="w-4 h-4 text-[#00D2FF]" />
+                  <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <WhatsAppIcon className="w-5 h-5 text-emerald-400" />
                   </div>
                   <div>
-                    <span className="block text-[11px] text-slate-400">Teléfono Directo:</span>
-                    <a href="tel:+56962262290" className="font-semibold text-white hover:text-[#00D2FF]">
-                      +56 9 6226 2290
+                    <span className="block text-[11px] text-slate-400">WhatsApp / Contacto Directo:</span>
+                    <a
+                      href="https://wa.me/56977082067"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-white hover:text-emerald-400 flex items-center gap-1.5 transition-colors"
+                    >
+                      +56 9 7708 2067
                     </a>
                   </div>
                 </div>
@@ -125,7 +131,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialInterest 
                   onClick={handleWhatsAppDirect}
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-900/40 transition-all"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Conversar Directo por WhatsApp</span>
                 </button>
               </div>

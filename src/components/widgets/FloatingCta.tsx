@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { MessageSquare, Calculator, X, Sparkles } from 'lucide-react';
+import { Calculator, X, Sparkles } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 interface FloatingCtaProps {
   onOpenDiagnostic: () => void;
   onOpenCalculator: () => void;
 }
 
-export const FloatingCta: React.FC<FloatingCtaProps> = ({ onOpenDiagnostic, onOpenCalculator }) => {
+export const FloatingCta: React.FC<FloatingCtaProps> = ({ onOpenCalculator }) => {
   const [bubbleDismissed, setBubbleDismissed] = useState(false);
 
   const handleWhatsAppClick = () => {
     const text = encodeURIComponent(
       "Hola G1 IMPULSO, me gustaría consultar con un especialista sobre sus servicios de mejora continua y diagnóstico operativo."
     );
-    window.open(`https://wa.me/56962262290?text=${text}`, '_blank');
+    window.open(`https://wa.me/56977082067?text=${text}`, '_blank');
   };
 
   return (
@@ -60,7 +61,7 @@ export const FloatingCta: React.FC<FloatingCtaProps> = ({ onOpenDiagnostic, onOp
           {/* Online green indicator */}
           <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full animate-ping" />
           <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-300 border-2 border-white rounded-full" />
-          <MessageSquare className="w-6 h-6 fill-current" />
+          <WhatsAppIcon className="w-6 h-6 text-white" />
         </button>
       </div>
     </div>

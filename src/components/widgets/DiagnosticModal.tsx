@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, ShieldCheck, Sparkles, Send } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import confetti from 'canvas-confetti';
 
 interface DiagnosticModalProps {
@@ -199,9 +200,20 @@ export const DiagnosticModal: React.FC<DiagnosticModalProps> = ({
                 )}
               </button>
 
-              <div className="flex items-center justify-center gap-2 text-[11px] text-slate-400 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>100% Confidencial bajo Acuerdo NDA</span>
+              <div className="pt-2 flex flex-col items-center gap-2">
+                <a
+                  href="https://wa.me/56977082067"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 hover:text-emerald-700 hover:underline"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>O escríbenos directamente a WhatsApp: +56 9 7708 2067</span>
+                </a>
+                <div className="flex items-center justify-center gap-2 text-[11px] text-slate-400">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>100% Confidencial bajo Acuerdo NDA</span>
+                </div>
               </div>
             </form>
           )}

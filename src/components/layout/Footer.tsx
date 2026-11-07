@@ -1,6 +1,7 @@
 import React from 'react';
 import { Logo } from '../brand/Logo';
-import { ShieldCheck, Award, MapPin, Mail, Phone, ArrowUp } from 'lucide-react';
+import { ShieldCheck, MapPin, Mail, ArrowUp } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -104,9 +105,14 @@ export const Footer: React.FC = () => {
                 <span>Santiago, Chile (Cobertura Nacional y Latam)</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#0066FF] shrink-0" />
-                <a href="tel:+56962262290" className="hover:text-white">
-                  +56 9 6226 2290
+                <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                <a
+                  href="https://wa.me/56977082067"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 font-medium transition-colors"
+                >
+                  +56 9 7708 2067
                 </a>
               </li>
               <li className="flex items-center gap-2">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from '../brand/Logo';
-import { Menu, X, ArrowRight, PhoneCall, Calculator } from 'lucide-react';
+import { Menu, X, ArrowRight, Calculator } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 
 interface NavbarProps {
   onOpenDiagnosticModal: () => void;
@@ -58,6 +59,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnosticModal, onOpenCal
 
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="https://wa.me/56977082067"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-emerald-300 hover:text-white bg-emerald-500/15 hover:bg-emerald-500/25 rounded-lg border border-emerald-500/30 transition-all shadow-xs"
+              title="Conversar por WhatsApp"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+              <span>+56 9 7708 2067</span>
+            </a>
+
             <button
               onClick={onOpenCalculator}
               className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-all"
@@ -108,6 +120,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnosticModal, onOpenCal
             </a>
           ))}
           <div className="pt-4 border-t border-white/10 flex flex-col gap-2.5">
+            <a
+              href="https://wa.me/56977082067"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md transition-all"
+            >
+              <WhatsAppIcon className="w-4 h-4 text-white" />
+              <span>WhatsApp: +56 9 7708 2067</span>
+            </a>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
